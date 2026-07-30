@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#1C2242"/>
+  <circle cx="200" cy="200" r="150" fill="none" stroke="#3A4270" stroke-width="2"/>
+  <circle cx="200" cy="200" r="115" fill="none" stroke="#3A4270" stroke-width="2"/>
+  <circle cx="200" cy="200" r="80" fill="none" stroke="#3A4270" stroke-width="2"/>
+  <circle cx="200" cy="200" r="45" fill="#C9A227"/>
+  <circle cx="200" cy="200" r="6" fill="#12172B"/>
+  <text x="200" y="205" font-family="Georgia, serif" font-size="13" fill="#12172B" text-anchor="middle" opacity="0.7">SIN PORTADA</text>
+</svg>
