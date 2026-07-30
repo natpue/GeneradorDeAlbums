@@ -103,23 +103,52 @@ html,body{
   margin:0 0 22px;
 }
 
-.rate-row{
+.stars-wrap{
   display:flex;
-  justify-content:center;
-  gap:14px;
+  flex-direction:column;
+  align-items:center;
+  gap:6px;
+  margin-bottom:16px;
+}
+.stars{
+  position:relative;
+  font-size:30px;
+  letter-spacing:6px;
+  line-height:1;
+  cursor:pointer;
+  width:max-content;
+}
+.stars-outer{ color:var(--groove); }
+.stars-inner{
+  position:absolute;
+  top:0; left:0;
+  width:0%;
+  overflow:hidden;
+  color:var(--gold);
+  white-space:nowrap;
+  pointer-events:none;
+}
+.rating-value{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:12px;
+  color:var(--muted);
+}
+
+.comment-box{
+  width:100%;
+  min-height:70px;
+  resize:vertical;
+  background:var(--surface);
+  border:1px solid var(--groove);
+  border-radius:12px;
+  color:var(--text);
+  font-family:'Inter', sans-serif;
+  font-size:14px;
+  padding:12px 14px;
   margin-bottom:20px;
 }
-.groove{
-  width:34px; height:34px;
-  border-radius:50%;
-  border:1.5px solid var(--groove);
-  background:transparent;
-  cursor:pointer;
-}
-.groove.filled{
-  background:var(--gold);
-  border-color:var(--gold);
-}
+.comment-box::placeholder{ color:var(--muted); }
+.comment-box:focus{ outline:none; border-color:var(--teal); }
 
 .cta{
   display:block;
@@ -132,7 +161,40 @@ html,body{
   padding:13px 20px;
   border-radius:999px;
   margin:0 8px;
+  border:none;
+  cursor:pointer;
 }
+.cta.secondary{
+  background:transparent;
+  border:1.5px solid var(--groove);
+  color:var(--text);
+}
+
+.backup-row{ display:flex; flex-direction:column; gap:10px; }
+.file-label{ display:flex; align-items:center; justify-content:center; }
+
+.modal{
+  position:fixed; inset:0;
+  background:rgba(18,23,43,0.85);
+  display:flex; align-items:center; justify-content:center;
+  z-index:50;
+  padding:24px;
+}
+.modal.hidden{ display:none; }
+.modal-card{
+  background:var(--surface);
+  border-radius:18px;
+  padding:26px 22px;
+  max-width:340px;
+  width:100%;
+  text-align:center;
+}
+.modal-text{
+  font-family:'Fraunces', serif;
+  font-size:17px;
+  margin:0 0 20px;
+}
+.modal-actions{ display:flex; flex-direction:column; gap:10px; }
 
 .section-title{
   font-family:'Fraunces', serif;

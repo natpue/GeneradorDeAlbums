@@ -35,13 +35,15 @@
     <p class="catalog" id="albumCatalog">— · — · —</p>
     <p class="blurb" id="albumBlurb">—</p>
 
-    <div class="rate-row" id="rateRow" aria-label="Calificar de 1 a 5">
-      <button class="groove" data-v="1"></button>
-      <button class="groove" data-v="2"></button>
-      <button class="groove" data-v="3"></button>
-      <button class="groove" data-v="4"></button>
-      <button class="groove" data-v="5"></button>
+    <div class="stars-wrap">
+      <div class="stars" id="starRow" aria-label="Calificar de 0.5 a 5 estrellas">
+        <div class="stars-outer">★★★★★</div>
+        <div class="stars-inner" id="starsInner">★★★★★</div>
+      </div>
+      <span class="rating-value" id="ratingValue"></span>
     </div>
+
+    <textarea id="comment" class="comment-box" placeholder="Tus impresiones sobre el álbum de hoy..."></textarea>
 
     <a id="spotifyLink" class="cta" href="#" target="_blank" rel="noopener">Escuchar en Spotify</a>
   </section>
@@ -55,11 +57,30 @@
     <h2 class="section-title">Estadísticas</h2>
     <div class="stat-grid">
       <div class="stat"><span class="stat-num" id="statRated">0</span><span class="stat-label">calificados</span></div>
-      <div class="stat"><span class="stat-num" id="statTotal">0</span><span class="stat-label">en el catálogo</span></div>
       <div class="stat"><span class="stat-num" id="statAvg">—</span><span class="stat-label">promedio</span></div>
+      <div class="stat"><span class="stat-num" id="statSkipped">0</span><span class="stat-label">no escuchados</span></div>
     </div>
     <p class="stat-note">El desglose por género, década y origen se activa cuando el catálogo crezca más allá de este lote de prueba.</p>
+
+    <h2 class="section-title">Respaldo</h2>
+    <p class="stat-note">Tus calificaciones y comentarios quedan guardados solo en este dispositivo. Para llevarlos a otro (o para no perderlos), exporta un respaldo y luego impórtalo ahí.</p>
+    <div class="backup-row">
+      <button id="exportBtn" class="cta secondary">Exportar respaldo</button>
+      <label class="cta secondary file-label">Importar respaldo
+        <input type="file" id="importInput" accept="application/json" hidden>
+      </label>
+    </div>
   </section>
+
+  <div id="checkinModal" class="modal hidden">
+    <div class="modal-card">
+      <p class="modal-text" id="checkinText">¿Escuchaste el álbum de ayer?</p>
+      <div class="modal-actions">
+        <button class="cta" id="btnListened">Escuchado</button>
+        <button class="cta secondary" id="btnNotListened">No escuchado</button>
+      </div>
+    </div>
+  </div>
 
   <nav class="tabbar">
     <button class="tab active" data-view="hoy">Hoy</button>
